@@ -2,30 +2,18 @@
 
 return array(
 
-	'uri' => 'contact',
+	'uri' => 'kontakt',
 
 	'view' => 'laravel-contact-form::contact',
 
 	'fields' => array(
-//		'name' => array(
-//			'type' => 'text',
-//		),
-		'title' => array(
-			'type' => 'select',
-			'choices' => array(
-				'' => 'Please select',
-				'Mr' => 'Mr',
-				'Mrs' => 'Mrs',
-				'Miss' => 'Miss',
-				'Ms' => 'Ms',
-				'Dr' => 'Dr',
-				'Other' => 'Other',
-			),
-		),
-		'first_name' => array(
+		'name' => array(
 			'type' => 'text',
 		),
-		'last_name' => array(
+		'company' => array(
+			'type' => 'text',
+		),
+		'phone' => array(
 			'type' => 'text',
 		),
 		'email' => array(
@@ -37,10 +25,8 @@ return array(
 	),
 
 	'rules' => array(
-//		'name' => 'required',
-		'title' => 'required',
-		'first_name' => 'required',
-		'last_name' => 'required',
+		'name' => 'required',
+		'phone' => 'numeric|min:8',
 		'email' => 'required|email',
 		'enquiry' => 'required',
 	),
@@ -51,14 +37,14 @@ return array(
 			'laravel-contact-form::emails.text.enquiry',
 		),
 		'to' => array(
-			'name' => 'Customer Service',
-			'email' => 'customer.service@domain.com',
+			'name' => 'Paul',
+			'email' => 'paul@leisch.co.at',
 		),
-		'subject' => 'Website Enquiry',
+		'subject' => 'Kontaktaufnahme via Webseite (http://www.leisch.co.at)',
 	),
 
-	'page_title' => 'Contact Us',
-	'meta_description' => 'Fill in this form to contact us',
-	'meta_keywords' => 'Contact',
+	'page_title' => 'Kontaktieren Sie mich',
+	'meta_description' => 'Füllen Sie dieses Formular aus, um mit mir in Kontakt zu treten.',
+	'meta_keywords' => 'Kontakt',
 
 );
